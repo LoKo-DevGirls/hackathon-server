@@ -1,9 +1,9 @@
 import SQ from 'sequelize';
-import sequelize from '../db/database';
+import sequelize from '../db/database.js';
 
 const { DataTypes } = SQ;
 
-const Council = sequelize.define('council', {
+export const Council = sequelize.define('council', {
   councilId: {
     type: DataTypes.INTEGER,
     autoIncrement: true,

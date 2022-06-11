@@ -4,9 +4,9 @@ import cors from 'cors';
 import router from './router.js';
 
 const app = express();
-app.use(router);
 app.use(express.json());
 app.use(cors());
+app.use(router);
 
 // catch error
 app.use((_req, res, _next) => res.sendStatus(404));
