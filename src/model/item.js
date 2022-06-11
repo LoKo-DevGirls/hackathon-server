@@ -16,7 +16,7 @@ export const Item = sequelize.define('item', {
   },
   itemImage: {
     type: DataTypes.STRING(200),
-    allowNull: false,
+    allowNull: true,
   },
   isRecyclable: {
     type: DataTypes.BOOLEAN(),
@@ -24,7 +24,7 @@ export const Item = sequelize.define('item', {
   },
   howToRecycle: {
     type: DataTypes.TEXT('long'),
-    allowNull: false,
+    allowNull: true,
   },
   upcycleVideo: {
     type: DataTypes.STRING(200),
@@ -37,9 +37,5 @@ export const Item = sequelize.define('item', {
   categoryId: {
     type: DataTypes.INTEGER,
     allowNull: true,
-  },
-  upcycleVideo: {
-    type: DataTypes.STRING(200),
-    allowNull: false,
   },
 });

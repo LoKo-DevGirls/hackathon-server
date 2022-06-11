@@ -2,15 +2,19 @@ import { Item } from '../model/item.js';
 
 export async function createItem(req, res) {
   try {
-    const newItem = await Item.create({
+    const itemData = {
       ...req.body,
       itemImage: null,
       howToRecycle: null,
       upcycleVideo: null, // TODO: YouTube API
-    });
+      categoryId: null,
+    };
+    const newItem = await Item.create(itemData);
+
     res.status(200).json({ newItem, alert: 'Successfully saved a new item!' });
     res.end();
   } catch (error) {
+    console.error(error);
     res.status(401).json({ error: 'create failed!' });
   }
 }
