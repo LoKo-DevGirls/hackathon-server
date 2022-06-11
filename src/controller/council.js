@@ -1,5 +1,9 @@
 import { Council } from '../model/council.js';
 
+export function getCouncils(councilName) {
+  
+}
+
 export async function createCouncil(req, res) {
   try {
     const { councilName } = req.body;
