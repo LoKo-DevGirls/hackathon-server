@@ -1,4 +1,5 @@
 import { Item } from '../model/item.js';
+import { Op } from 'sequelize';
 
 export async function createItem(req, res) {
   try {
@@ -36,11 +37,33 @@ export async function getFilteredItem(req, res) {
   try {
     const { search } = req.query;
 
-    // TODO
-    // await Item....
+    const items = await Item.findAll({
+      where: {
+        itemName: { [Op.like]: `%${search}%` },
+      },
+    });
 
+    res.status(200);
+    res.send(items);
     res.end();
   } catch (error) {
+    res.status(401);
+    res.send(error);
+    res.end();
+  }
+}
+
+export async function updateItem(req, res) {
+  try {
+    const { id } = req.params;
+    await Item.update({ ...req.body }, { where: { itemId: id } });
+    const updatedItem = await Item.findByPk(id);
+
+    res.status(200);
+    res.send(updatedItem);
+    res.end();
+  } catch (error) {
+    console.error(error);
     res.status(401);
     res.send(error);
     res.end();

@@ -14,6 +14,8 @@ router.post('/category', Category.createCategory);
 
 router.post('/item', Item.createItem);
 router.get('/allitem', Item.getAllItem);
+router.patch('/item/:id', Item.updateItem);
+router.get('/item', Item.getFilteredItem);
 
 router.get('**', (req, res) => {
   res.send('❌ invalid route');
