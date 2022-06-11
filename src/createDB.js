@@ -1,19 +1,19 @@
 import 'dotenv/config';
-import mysql from "mysql2/promise";
+import mysql from 'mysql2/promise';
 
 const dbName = process.env.DB_DATABASE;
 const password = process.env.DB_PASSWORD;
 
 mysql
   .createConnection({
-    host: process.env.DB_HOST || "127.0.0.1",
-    port: process.env.DB_PORT || "3306",
-    user: process.env.DB_USER || "root",
+    host: process.env.DB_HOST || '127.0.0.1',
+    port: process.env.DB_PORT || '3306',
+    user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || password,
   })
   .then((connection) => {
     connection.query(`CREATE DATABASE IF NOT EXISTS ${dbName};`).then((res) => {
-      console.info("Database create or successfully checked");
+      console.info('Database create or successfully checked');
       process.exit(0);
     });
   });
