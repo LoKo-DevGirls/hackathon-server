@@ -1,5 +1,14 @@
 import { Council } from '../model/council.js';
 
+export async function getCouncils(req, res) {
+  try {
+    const councils = await Council.findAll();
+    res.status(200).json(councils);
+  } catch (error) {
+    res.status(401).json(error);
+  }
+}
+
 export async function createCouncil(req, res) {
   try {
     const { councilName } = req.body;
