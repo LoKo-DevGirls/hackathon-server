@@ -1,8 +1,8 @@
+import 'dotenv/config';
 import mysql from "mysql2/promise";
 
 const dbName = process.env.DB_DATABASE;
-
-const password = process.env["PASSWORD"];
+const password = process.env.DB_PASSWORD;
 
 mysql
   .createConnection({

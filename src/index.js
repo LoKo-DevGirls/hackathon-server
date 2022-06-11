@@ -1,7 +1,7 @@
 import express from "express";
 import "express-async-errors";
 import cors from "cors";
-import sequelize from "./src/db/database.js";
+import sequelize from "./db/database.js";
 
 const PORT = "8080";
 
