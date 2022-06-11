@@ -7,6 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.js",
+    "prestart": "npm run db:migrate",
     "start": "node src/index.js",
     "db:pre-migrate": "node src/createDB.js",
     "db:migrate": "npm run db:pre-migrate && node_modules/.bin/sequelize db:migrate"
