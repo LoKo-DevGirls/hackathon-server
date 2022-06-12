@@ -1,14 +1,16 @@
-# OnTheGround API
+# OnTheGround OPEN API
 
 ![logo](./Logos/Logo-01.png)
 
-**OnTheGround Open API** for everyone who want to get or store all knowledge about recycling in your area ✨ You can read the data and also write the data to our database. Please help us to cover all traches and local areas.
+**OnTheGround Open API** for everyone who want to get or store all knowledge about recycling in your area ✨ You can read the data and also write the data to our database. Please help us to cover all trashes and local areas.
 
 ## <br/>
 
 ---
 
 <br/>
+
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 ## 🙋 [Join Our Beta Testing](https://docs.google.com/forms/d/e/1FAIpQLSfCf3AFGsCvNG2ghCwa3NSUaflzIC2cWN8mxH8FAY-JsMfJuw/viewform?usp=sf_link)
 
