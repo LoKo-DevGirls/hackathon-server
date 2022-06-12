@@ -25,7 +25,7 @@ export async function createItem(req, res) {
 
 export async function getAllItem(req, res) {
   try {
-    const items = await Item.findAll();
+    const items = await Item.findAll({ where: { status: 'approved' } });
     res.status(200);
     res.send(items);
     res.end();
