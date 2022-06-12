@@ -74,8 +74,8 @@ Item[]
 
 ```TS
 {
-	councilId: string;
-	status?: 'pending' | 'approved' | 'rejected';
+  councilId: string;
+  status?: 'pending' | 'approved' | 'rejected';
 }
 ```
 
@@ -104,13 +104,13 @@ Item
 
 ```TS
 {
-	itemName: string;
-	itemImage?: string;
-	isRecyclable: boolean;
-	howToRecycle?: string | null;
-	upcycleVideo?: string;
-	councilId: string;
-	categoryId: string;
+  itemName: string;
+  itemImage?: string;
+  isRecyclable: boolean;
+  howToRecycle?: string | null;
+  upcycleVideo?: string;
+  councilId: string;
+  categoryId: string;
 }
 ```
 
@@ -128,14 +128,14 @@ Item
 
 ```TS
 {
-	itemName?: string;
-	itemImage?: string;
-	isRecyclable?: boolean;
-	howToRecycle?: string | null;
-	upcycleVideo?: string;
-	councilId?: string;
-	categoryId?: string;
-	status?: 'pending' | 'approved' | 'rejected';
+  itemName?: string;
+  itemImage?: string;
+  isRecyclable?: boolean;
+  howToRecycle?: string | null;
+  upcycleVideo?: string;
+  councilId?: string;
+  categoryId?: string;
+  status?: 'pending' | 'approved' | 'rejected';
 }
 ```
 
@@ -170,7 +170,7 @@ category[]
 
 ```TS
 {
-	categoryName: string;
+  categoryName: string;
 }
 ```
 
@@ -180,4 +180,35 @@ category[]
 status: 201
 
 category
+```
+
+---
+
+</br>
+</br>
+
+## Data Structure
+
+```TS
+council: {
+  councilId: string;
+  councilName: string;
+}
+
+item: {
+  itemId: string;
+  itemName: string;
+  itemImage: string;
+  isRecyclable: boolean;
+  howToRecycle: string | null;
+  upcycleVideo: string | null;
+  councilId: string;
+  categoryId: string | null;
+  status: 'pending' | 'approved' | 'rejected';
+}
+
+category: {
+  categoryId: number;
+  categoryName: string;
+}
 ```
