@@ -22,6 +22,15 @@
 
 ## Councils
 
+### **GET** a council by ID `/council/:id`
+
+> Request body
+> Response
+
+```
+Council
+```
+
 ### **GET** all councils `/councils`
 
 > Request Body
@@ -57,6 +66,15 @@ Council
 <br/>
 
 ## Items
+
+### **GET** an item by ID `/item/:id`
+
+> Request body
+> Response
+
+```
+Item
+```
 
 ### **GET** all items `/allitem`
 
