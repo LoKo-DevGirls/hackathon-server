@@ -1,5 +1,7 @@
 import { Item } from '../model/item.js';
 import { Op } from 'sequelize';
+import logger from '../logger.js';
+import * as fs from 'fs';
 
 export async function createItem(req, res) {
   try {
@@ -43,6 +45,7 @@ export async function getFilteredItem(req, res) {
       },
     });
 
+    logger.log('info', items[0]);
     res.status(200);
     res.send(items);
     res.end();
@@ -66,6 +69,20 @@ export async function updateItem(req, res) {
     console.error(error);
     res.status(401);
     res.send(error);
+    res.end();
+  }
+}
+
+export async function getLastSearchedItem(req, res) {
+  try {
+    const logFile = fs.readFileSync('./all.log', 'utf8');
+    const logData = logFile.split('\n');
+    res.status(200);
+    res.send(logData[logData.length - 2]);
+    res.end();
+  } catch (error) {
+    console.error(error);
+    res.status(500);
     res.end();
   }
 }

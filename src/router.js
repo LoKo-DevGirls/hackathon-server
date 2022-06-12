@@ -1,5 +1,8 @@
 import * as express from 'express';
 import { Council, Category, Item } from './controller/index.js';
+
+import logger from './logger.js';
+
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -16,6 +19,7 @@ router.post('/item', Item.createItem);
 router.get('/allitem', Item.getAllItem);
 router.patch('/item/:id', Item.updateItem);
 router.get('/item', Item.getFilteredItem);
+router.get('/recentItem', Item.getLastSearchedItem);
 
 router.get('**', (req, res) => {
   res.send('❌ invalid route');
