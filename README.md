@@ -2,7 +2,7 @@
 
 ![logo](./Logos/Logo-01.png)
 
-**OnTheGround Open API** for everyone who want to get or store all knowledge about recycling in your area ✨ You can read the data and also write the data to our database. Please help us to cover all trashes and local areas.
+**OnTheGround Open API** for everyone who want to get or store all knowledge about recycling in your area ✨ You can read the data and also write the data to our database. Please help us to cover all trashes and local areas. Some garbage is still too early to be buried under the ground.
 
 ## <br/>
 
@@ -70,16 +70,9 @@ status: 200
 Item[]
 ```
 
-### **GET** search items `/item?search={value}`
+### **GET** search items `/item?search={value}&councilId={value}`
 
 > Request body
-
-```TS
-{
-  councilId: string;
-  status?: 'pending' | 'approved' | 'rejected';
-}
-```
 
 > response
 
