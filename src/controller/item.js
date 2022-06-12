@@ -7,10 +7,7 @@ export async function createItem(req, res) {
   try {
     const itemData = {
       ...req.body,
-      itemImage: null,
-      howToRecycle: null,
       upcycleVideo: null, // TODO: YouTube API
-      categoryId: null,
       status: 'pending',
     };
     const newItem = await Item.create(itemData);
