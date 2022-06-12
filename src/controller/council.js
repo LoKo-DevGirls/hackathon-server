@@ -22,3 +22,17 @@ export async function createCouncil(req, res) {
     res.status(500).json({ error: 'create failed!' });
   }
 }
+
+export async function getCouncilbyId(req, res) {
+  try {
+    const { id } = req.params;
+    const council = await Council.findByPk(id);
+    res.status(200);
+    res.send(council);
+    res.end();
+  } catch (error) {
+    res.status(500);
+    res.send(error);
+    res.end();
+  }
+}

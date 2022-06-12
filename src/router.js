@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
 
 router.get('/councils', Council.getCouncils);
 router.post('/council', Council.createCouncil);
+router.get('/council/:id', Council.getCouncilbyId);
 
 router.get('/categories', Category.getCategories);
 router.post('/category', Category.createCategory);
@@ -20,6 +21,7 @@ router.get('/allitem', Item.getAllItem);
 router.patch('/item/:id', Item.updateItem);
 router.get('/item', Item.getFilteredItem);
 router.get('/recentItem', Item.getLastSearchedItem);
+router.get('/item/:id', Item.getItemById);
 
 router.get('**', (req, res) => {
   res.send('❌ invalid route');

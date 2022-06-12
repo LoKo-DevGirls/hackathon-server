@@ -89,3 +89,17 @@ export async function getLastSearchedItem(req, res) {
     res.end();
   }
 }
+
+export async function getItemById(req, res) {
+  try {
+    const { id } = req.params;
+    const item = await Item.findByPk(id);
+    res.status(200);
+    res.send(item);
+    res.end();
+  } catch (error) {
+    res.status(500);
+    res.send(error);
+    res.end();
+  }
+}
