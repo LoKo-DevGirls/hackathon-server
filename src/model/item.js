@@ -38,4 +38,8 @@ export const Item = sequelize.define('item', {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
+  status: {
+    type: DataTypes.STRING(200),
+    allowNull: false,
+  },
 });

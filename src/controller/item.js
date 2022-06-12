@@ -11,6 +11,7 @@ export async function createItem(req, res) {
       howToRecycle: null,
       upcycleVideo: null, // TODO: YouTube API
       categoryId: null,
+      status: 'pending',
     };
     const newItem = await Item.create(itemData);
 
@@ -38,10 +39,13 @@ export async function getAllItem(req, res) {
 export async function getFilteredItem(req, res) {
   try {
     const { search } = req.query;
+    const { councilId, status = 'approved' } = req.body;
 
     const items = await Item.findAll({
       where: {
         itemName: { [Op.like]: `%${search}%` },
+        councilId,
+        status,
       },
     });
 
