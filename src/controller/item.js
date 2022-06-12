@@ -38,13 +38,12 @@ export async function getAllItem(req, res) {
 
 export async function getFilteredItem(req, res) {
   try {
-    const { search } = req.query;
-    const { councilId, status = 'approved' } = req.body;
+    const { search, councilId, status = 'approved' } = req.query;
 
     const items = await Item.findAll({
       where: {
         itemName: { [Op.like]: `%${search}%` },
-        councilId,
+        councilId: Number(councilId),
         status,
       },
     });
