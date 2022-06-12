@@ -5,7 +5,7 @@ export async function getCouncils(req, res) {
     const councils = await Council.findAll();
     res.status(200).json(councils);
   } catch (error) {
-    res.status(401).json(error);
+    res.status(500).json(error);
   }
 }
 
@@ -16,9 +16,9 @@ export async function createCouncil(req, res) {
       councilName,
     });
     res
-      .status(200)
+      .status(201)
       .json({ newCouncil, alert: 'Successfully saved a new council!' });
   } catch (error) {
-    res.status(401).json({ error: 'create failed!' });
+    res.status(500).json({ error: 'create failed!' });
   }
 }

@@ -14,11 +14,11 @@ export async function createItem(req, res) {
     };
     const newItem = await Item.create(itemData);
 
-    res.status(200).json({ newItem, alert: 'Successfully saved a new item!' });
+    res.status(201).json({ newItem, alert: 'Successfully saved a new item!' });
     res.end();
   } catch (error) {
     console.error(error);
-    res.status(401).json({ error: 'create failed!' });
+    res.status(500).json({ error: 'create failed!' });
   }
 }
 
@@ -29,7 +29,7 @@ export async function getAllItem(req, res) {
     res.send(items);
     res.end();
   } catch (error) {
-    res.status(401);
+    res.status(500);
     res.send(error);
     res.end();
   }
@@ -50,7 +50,7 @@ export async function getFilteredItem(req, res) {
     res.send(items);
     res.end();
   } catch (error) {
-    res.status(401);
+    res.status(500);
     res.send(error);
     res.end();
   }
@@ -67,7 +67,7 @@ export async function updateItem(req, res) {
     res.end();
   } catch (error) {
     console.error(error);
-    res.status(401);
+    res.status(500);
     res.send(error);
     res.end();
   }

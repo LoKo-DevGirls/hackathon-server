@@ -20,10 +20,10 @@ export async function createCategory(req, res) {
       });
     }
     res
-      .status(200)
+      .status(201)
       .json({ newCategory, alert: 'Successfully saved a new category!' });
   } catch (error) {
-    res.status(401).json({ error: 'create failed!' });
+    res.status(500).json({ error: 'create failed!' });
   }
 }
 
@@ -34,6 +34,6 @@ export async function getCategories(req, res) {
     const removeDuplication = [...new Set(categoriesArray)];
     res.status(200).json(removeDuplication);
   } catch (error) {
-    res.status(401).json(error);
+    res.status(500).json(error);
   }
 }
